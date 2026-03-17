@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 10
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:	
+          preferredDuringSchedulingIgnoredDuringExecution:	
             - labelSelector:	
                 matchLabels:	
                   app: frontend	

@@ -102,7 +102,7 @@ jobs:
           git reset --hard origin/main
 
           sed -i "s|image: ${{ secrets.DOCKER_USERNAME }}/${{ env.FRONTEND_IMAGE_NAME }}:.*|image: ${{ secrets.DOCKER_USERNAME }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ steps.get_tag.outputs.next_tag }}|g" \
-            kubernetes-manifests/frontend.yml
+            ../kubernetes-manifests/frontend.yml
           git add ../kubernetes-manifests/frontend.yml
           git diff --cached --quiet || git commit -m "ci: update frontend image to ${{ steps.get_tag.outputs.next_tag }}"
           git push origin main
@@ -164,7 +164,7 @@ jobs:
           git fetch origin
           git reset --hard origin/main
           sed -i "s|image: ${{ secrets.DOCKER_USERNAME }}/${{ env.BACKEND_IMAGE_NAME }}:.*|image: ${{ secrets.DOCKER_USERNAME }}/${{ env.BACKEND_IMAGE_NAME }}:${{ steps.get_tag.outputs.next_tag }}|g" \
-            kubernetes-manifests/backend.yml
+            ../kubernetes-manifests/backend.yml
           git add ../kubernetes-manifests/backend.yml
           git diff --cached --quiet || git commit -m "ci: update backend image to ${{ steps.get_tag.outputs.next_tag }}"
           git push origin main

@@ -21,11 +21,11 @@ metadata:
       alb.ingress.kubernetes.io/success-codes: '200'
 
       alb.ingress.kubernetes.io/ssl-redirect: '443'
-      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:829058667760:certificate/2485e657-62e8-4a3d-bdb7-d544e9c75ab9
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-2:283104167597:certificate/e81685eb-31d2-4545-ad51-fd1a785415db
 spec:
   ingressClassName: alb
   rules:
-    - host: wanderblog.online
+    - host: raph247.online
       http:
         paths:
           - path: /

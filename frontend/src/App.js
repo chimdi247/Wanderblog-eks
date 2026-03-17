@@ -68,7 +68,7 @@ function App() {
     <div>
       {/* ================= NAVBAR ================= */}
       <nav className="navbar">
-        <div className="logo">WanderBlog-chimdi</div>
+        <div className="logo">WanderBlog-Raphael</div>
         <button
           className="create-btn"
           onClick={() => setShowModal(true)}

@@ -22,7 +22,7 @@ spec:
               topologyKey: topology.kubernetes.io/zone
       containers:
         - name: backend
-          image: chimdi247/wanderblog-backend:v9
+          image: chimdi247/wanderblog-backend:v11
           ports:
             - containerPort: 5000
           envFrom:

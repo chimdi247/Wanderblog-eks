@@ -5,7 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 10
       affinity:
         podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:	
+          requiredDuringSchedulingIgnoredDuringExecution:	
             - labelSelector:	
                 matchLabels:	
                   app: frontend	

@@ -100,7 +100,8 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets._GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git add ../kubernetes-manifests/frontend.yml
           git diff --cached --quiet || git commit -m "ci: update frontend image to ${{ steps.get_tag.outputs.next_tag }}"
-          git push
+          git pull origin main --rebase
+          git push origin main
 
    # ─────────────────────────────────────────
   # BACKEND
